@@ -155,7 +155,7 @@ services:
     restart: unless-stopped
     
 foxglove_bridge:
-  image: ghcr.io/mowglifrenchtouch/foxglove-bridge:latest
+  image: ghcr.io/mowglifrenchtouch/foxglove-bridge:ros1
   network_mode: host
   environment:
     - ROS_MASTER_URI=http://localhost:11311
