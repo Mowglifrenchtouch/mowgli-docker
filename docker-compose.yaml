@@ -17,7 +17,7 @@ services:
       "com.centurylinklabs.watchtower.enable": true
       project: openmower
       app: gui
-    image: ghcr.io/mowglifrenchtouch/openmower-gui:bun
+    image: ghcr.io/mowglifrenchtouch/openmower-gui:latest
     restart: unless-stopped
     network_mode: host
     privileged: true
@@ -36,7 +36,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
   web:
     container_name: mowgli-web
-    image: ghcr.io/mowglifrenchtouch/openmowerapp:lib-updatefull
+    image: ghcr.io/mowglifrenchtouch/openmowerapp:latest
     labels:
       project: openmower
       app: web
