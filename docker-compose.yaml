@@ -34,7 +34,7 @@ services:
       - ./config/db:/db
       - ./config/om:/config
       - /var/run/docker.sock:/var/run/docker.sock
-    web:
+  web:
     container_name: mowgli-web
     image: ghcr.io/mowglifrenchtouch/openmowerapp:lib-updatefull
     labels:
@@ -154,10 +154,10 @@ services:
       - rosserial
     restart: unless-stopped
     
-foxglove_bridge:
-  image: ghcr.io/mowglifrenchtouch/foxglove-bridge:ros1
-  network_mode: host
-  environment:
-    - ROS_MASTER_URI=http://localhost:11311
-    - ROS_IP=${ROS_IP}
-  restart: unless-stopped
+  foxglove_bridge:
+    image: ghcr.io/mowglifrenchtouch/foxglove-bridge:ros1
+    network_mode: host
+    environment:
+      - ROS_MASTER_URI=http://localhost:11311
+      - ROS_IP=${ROS_IP}
+    restart: unless-stopped
